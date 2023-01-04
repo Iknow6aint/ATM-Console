@@ -4,8 +4,8 @@ class ATMAPP
     static void Main(string[] arrgs)
     {
         AppScreen.Welcome();
-        string name = Utility.GetUserInput("your name");
-        Console.WriteLine($"your name is {name}");
+        string cardNumber = Utility.GetUserInput("your Card number");
+        Console.WriteLine($"your name is {cardNumber}");
 
         Utility.PressEnterToContinue();
     }
