@@ -1,9 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Collections.Generic;
-public class ATMAPP
+public class ATMAPP : IUserLogin
 {
     private List<UserAccount> userAccountList;
     private UserAccount selectedAccount;
+
+    public void CheckUserCardNumberAndPassword()
+    {
+        bool isCorrectLogin = false;
+        UserAccount tempUserAccount = new UserAccount();
+
+        tempUserAccount.CardNumber = Validator.Convert<long>("Your Card number");
+        tempUserAccount.CardPin = Validator.E
+    }
+
     public void InitializeData()
     {
         userAccountList = new List<UserAccount>{
