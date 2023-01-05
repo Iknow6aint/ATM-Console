@@ -10,8 +10,9 @@ class Entry
     static void Main(string[] arrgs)
     {
         AppScreen.Welcome();
-        long cardNumber = Validator.Convert<long>("Your card number ");
-        Console.WriteLine($"your name is {cardNumber}");
+        ATMAPP atmApp = new ATMAPP();
+
+        atmApp.CheckUserCardNumberAndPassword();
 
         Utility.PressEnterToContinue();
     }

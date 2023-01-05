@@ -37,12 +37,11 @@ public static class Utility
             if (inputkey.Key == ConsoleKey.Backspace && input.Length > 0)
             {
                 input.Remove(input.Length - 1, 1);
-
             }
             else if (inputkey.Key != ConsoleKey.Backspace)
             {
                 input.Append(inputkey.KeyChar);
-                Console.Write(asterics + '*');
+                Console.Write(asterics + "*");
             }
         }
         return input.ToString();

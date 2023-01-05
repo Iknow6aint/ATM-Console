@@ -11,7 +11,7 @@ public class ATMAPP : IUserLogin
         UserAccount tempUserAccount = new UserAccount();
 
         tempUserAccount.CardNumber = Validator.Convert<long>("Your Card number");
-        tempUserAccount.CardPin = Validator.E
+        tempUserAccount.CardPin = Convert.ToInt32(Utility.GetSecretInput("Enter Your Pin"));
     }
 
     public void InitializeData()
