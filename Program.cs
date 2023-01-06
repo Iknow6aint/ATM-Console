@@ -37,17 +37,18 @@ public class ATMAPP : IUserLogin
                     break;
                 }
             }
-        }
-        if (isCorrectLogin == false)
-        {
-            Utility.PrintError("\nInvalid Card Number Or Pin", false);
-            selectedAccount.IsLocked = selectedAccount.TotalLogin == 3;
-            if (selectedAccount.IsLocked)
+            if (isCorrectLogin == false)
             {
-                AppScreen.PrintLockedScreen();
+                Utility.PrintError("\nInvalid Card Number Or Pin", false);
+                selectedAccount.IsLocked = selectedAccount.TotalLogin == 3;
+                if (selectedAccount.IsLocked)
+                {
+                    AppScreen.PrintLockedScreen();
+                }
             }
+            Console.Clear();
         }
-        Console.Clear();
+
     }
 
     public void Welcome()
