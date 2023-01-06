@@ -16,9 +16,8 @@ public static class Utility
         while (true)
         {
             if (isPrompt)
-            {
                 Console.WriteLine(prompt);
-            }
+            isPrompt = false;
             ConsoleKeyInfo inputkey = Console.ReadKey(true);
 
             if (inputkey.Key == ConsoleKey.Enter)
@@ -29,7 +28,7 @@ public static class Utility
                 }
                 else
                 {
-                    PrintError("\nplease enter 6 digits.", false);
+                    PrintError("\nPlease enter 6 digits.", false);
                     isPrompt = true;
                     input.Clear();
                 }
