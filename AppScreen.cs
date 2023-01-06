@@ -23,4 +23,19 @@ public static class AppScreen
         Utility.PressEnterToContinue();
     }
 
+    internal static UserAccount UserLoginForm()
+    {
+        UserAccount tempUserAccount = new UserAccount();
+
+        tempUserAccount.CardNumber = Validator.Convert<long>("Your Card number");
+        tempUserAccount.CardPin = Convert.ToInt32(Utility.GetSecretInput("Enter Your Card Pin"));
+        return tempUserAccount;
+    }
+    internal static void LoginProcess()
+    {
+        Console.WriteLine("\nChecking Card number and PIN ...");
+        Utility.PrintDotAnimation();
+
+    }
+
 }

@@ -71,4 +71,13 @@ public static class Utility
         Console.WriteLine("\n\n Press Enter TO continue");
         Console.ReadLine();
     }
+    public static void PrintDotAnimation(int timer = 10)
+    {
+        for (int i = 0; i < timer; i++)
+        {
+            Console.Write(".");
+            Thread.Sleep(200);
+        }
+        Console.Clear();
+    }
 }

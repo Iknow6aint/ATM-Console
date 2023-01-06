@@ -17,19 +17,9 @@ public class ATMAPP : IUserLogin
     public void CheckUserCardNumberAndPassword()
     {
         bool isCorrectLogin = false;
-        UserAccount tempUserAccount = new UserAccount();
+        UserAccount inputAcount = AppScreen.UserLoginForm();
 
-        tempUserAccount.CardNumber = Validator.Convert<long>("Your Card number");
-        tempUserAccount.CardPin = Convert.ToInt32(Utility.GetSecretInput("Enter Your Card Pin"));
-
-        Console.WriteLine(" Checking Card number and PIN ...");
-
-        int timer = 10;
-        for (int i = 0; i < timer; i++)
-        {
-            Console.Write(".");
-            Thread.Sleep(200);
-        }
-        Console.Clear();
     }
+
+
 }
