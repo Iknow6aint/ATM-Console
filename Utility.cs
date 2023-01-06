@@ -31,6 +31,7 @@ public static class Utility
                     PrintError("\nPlease enter 6 digits.", false);
                     isPrompt = true;
                     input.Clear();
+                    continue;
                 }
             }
             if (inputkey.Key == ConsoleKey.Backspace && input.Length > 0)
