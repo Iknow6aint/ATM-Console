@@ -17,7 +17,42 @@ public class ATMAPP : IUserLogin
     public void CheckUserCardNumberAndPassword()
     {
         bool isCorrectLogin = false;
-        UserAccount inputAcount = AppScreen.UserLoginForm();
+        UserAccount inputAccount = AppScreen.UserLoginForm();
+        AppScreen.LoginProcess();
+        foreach (UserAccount account in userAccountList)
+        {
+            selectedAccount = account;
+            if (inputAccount.CardPin.Equals(selectedAccount.CardPin))
+            {
+                selectedAccount = account;
+                if (selectedAccount.IsLocked || selectedAccount.TotalLogin > 3)
+                {
+                    // print is locked message
+                    AppScreen.PrintLockedScreen();
+                }
+                else
+                {
+                    selectedAccount.TotalLogin = 0;
+                    isCorrectLogin = true;
+                    break;
+                }
+            }
+        }
+        if (isCorrectLogin == false)
+        {
+            Utility.PrintError("\nInvalid Card Number Or Pin", false);
+            selectedAccount.IsLocked = selectedAccount.TotalLogin == 3;
+            if (selectedAccount.IsLocked)
+            {
+                AppScreen.PrintLockedScreen();
+            }
+        }
+        Console.Clear();
+    }
+
+    public void Welcome()
+    {
+        Console.WriteLine($"Welcom back,{selectedAccount.FullName}");
 
     }
 

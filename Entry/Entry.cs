@@ -11,8 +11,9 @@ class Entry
     {
         AppScreen.Welcome();
         ATMAPP atmApp = new ATMAPP();
-
+        atmApp.InitializeData();
         atmApp.CheckUserCardNumberAndPassword();
+        atmApp.Welcome();
 
         Utility.PressEnterToContinue();
     }

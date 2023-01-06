@@ -37,5 +37,13 @@ public static class AppScreen
         Utility.PrintDotAnimation();
 
     }
+    internal static void PrintLockedScreen()
+    {
+        Console.Clear();
+        Utility.PrintError(" Your account is Loacked Please visit Branch ti unlock", true);
+
+        Utility.PressEnterToContinue();
+        Environment.Exit(1);
+    }
 
 }
